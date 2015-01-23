@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Futurama Etsy</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<h1>Futurama Etsy Store</h1>
+
+<ul class="futurama-list"></ul>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+
+<script type="text/template" data-template-name="futurama-item">
+
+  <li><% title %></li>
+  <img src="<% pictures %>">
+  <li><% price %></li>
+
+</script>
+
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
