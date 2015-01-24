@@ -1,0 +1,1 @@
+make sure to point to the appropriate directory for the bourbon and neat resources. Right now, you point your @import statements to the correct path. Right now, they're pointing to directories that don't exist.~

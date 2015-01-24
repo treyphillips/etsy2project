@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Futurama Etsy</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="style/main.css">
 </head>
+
 <body>
-<h1>Futurama Etsy Store</h1>
+  <img class="logoPic" src="logoPic.png">
+  <h1>Futurama Etsy Store</h1>
 
-<ul class="futurama-list"></ul>
+  <div class="stylin">
+  </div>
 
-<script src="bower_components/jquery/dist/jquery.js"></script>
 
-<script type="text/template" data-template-name="futurama-item">
+  <ul class="futurama-list"></ul>
 
-  <li><% title %></li>
-  <img src="<% pictures %>">
-  <li><% price %></li>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
 
-</script>
+  <script type="text/template" data-template-name="futurama-item">
+
+    <div class="container">
+      <div class="grid">
+        <div><img src="<% pictures %>" title="<% description %>"></div>
+        <div><a href="<% url %>"><p class="ellipsis"><% title %></p></a></div>
+        <div><% price %> <% currency %></div>
+        <div><% shop %></div>
+
+
+      <!--   <li>
+        <% price %>
+      </li>
+      <li>
+        <% title %>
+      </li> -->
+
+
+      </div>
+    </div>
+  </script>
 
 
   <script src="data.js"></script>

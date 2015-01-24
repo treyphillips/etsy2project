@@ -10,8 +10,12 @@ $(document).ready(function(){
   futurama.forEach(function(item){
     var titleText = renderTemplate('futurama-item', {
       title: item.title,
+      description: item.description,
       pictures: item.Images[0].url_170x135,
-      price: item.price
+      price: item.price,
+      currency: item.currency_code,
+      url: item.url,
+      shop: item.Shop.shop_name,
     });
     $list.append(titleText);
   });
