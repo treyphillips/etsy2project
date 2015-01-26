@@ -30,7 +30,10 @@ function renderTemplate(name, data) {
   return $template;
 }
 
-
+// var sort = function(array) {
+//   return _.sortBy(array, "price").reverse();
+// };
+//
 
 
 })();

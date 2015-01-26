@@ -8,11 +8,21 @@
 </head>
 
 <body>
-  <img class="logoPic" src="logoPic.png">
+  <img class="logoPic" src="logoPic.png" alt="Futurama Logo">
   <h1>Futurama Etsy Store</h1>
+
+  <!-- <div class="dropper">
+    <select name="sort" id="">
+      <option value="low-price">Lowest Price</option>
+      <option value="high-price">High Price</option>
+      <option value="relevency">Relevency</option>
+    </select>
+
+  </div> -->
 
   <div class="stylin">
   </div>
+
 
 
   <ul class="futurama-list"></ul>
@@ -23,20 +33,10 @@
 
     <div class="container">
       <div class="grid">
-        <div><img src="<% pictures %>" title="<% description %>"></div>
+        <div class="pics"><img src="<% pictures %>" title="<% description %>"></div>
         <div><a href="<% url %>"><p class="ellipsis"><% title %></p></a></div>
         <div><% price %> <% currency %></div>
         <div><% shop %></div>
-
-
-      <!--   <li>
-        <% price %>
-      </li>
-      <li>
-        <% title %>
-      </li> -->
-
-
       </div>
     </div>
   </script>

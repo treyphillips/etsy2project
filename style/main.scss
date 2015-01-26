@@ -8,22 +8,37 @@ $image-width: 100%;
 $image-height: 100%;
 
 body {
-  background-color: #F5F5F1;
+  background-color: #f5f5f1;
 }
+
 .logoPic {
-  height: 200px;
-  width: 200px;
   display: inline;
+  width: 100px;
+  height: 100px;
   vertical-align: middle;
 }
+
 h1 {
-  font-size: 50px;
-  text-align: center;
   display: inline;
   vertical-align: middle;
+  text-align: center;
+  font-size: 100px;
 }
+
 .stylin {
   @include outer-container(782px);
+}
+
+.leftNav {
+  @include span-columns(4);
+  @include omega(3n);
+  border: solid white 1px;
+  background-color: white;
+  text-decoration: none;
+  font-family: arial;
+  list-style-type: none;
+  display: inline-block;
+  clear: right;
 }
 
 .container {
@@ -31,25 +46,27 @@ h1 {
   @include omega(3n);
   border: solid white 1px;
   background-color: white;
-  padding-top: 35px;
-  list-style-type: none;
+  text-decoration: none;
   font-family: arial;
-}
-.grid {
-  padding: 5px;
-  box-shadow: 0 0 30px -10px #999;
+  list-style-type: none;
 }
 
-.grid img {
-  height: 172px;
-  /* width: 100%; */
-  display: inline;
-  padding: 0;
+.grid {
+  box-shadow: 0 0 30px -10px #999;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+
+}
+
+.pics img {
+  width: 100%;
+  height: 100%;
 }
 
 .ellipsis {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  -o-text-overflow:ellipsis;
 }
