@@ -30,10 +30,23 @@ function renderTemplate(name, data) {
   return $template;
 }
 
-// var sort = function(array) {
-//   return _.sortBy(array, "price").reverse();
-// };
-//
+var sort = function(array) {
+  return _.sortBy(array, "price").reverse();
+};
 
+ var userInput = function() {
+
+ $('form').on('submit', function(event) {
+  console.log($(this).find('input').val());
+
+});
+}
+
+$.ajax({
+  url: "https://api.etsy.com/v2/listings/active.js?api_key=cdwxq4soa7q4zuavbtynj8wx&keywords="+userInput+"&includes=Images,Shop",
+  dataType: 'jsonp'
+}).done(function(data){
+  console.log(data);
+});
 
 })();

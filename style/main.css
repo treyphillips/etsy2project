@@ -19,10 +19,18 @@ body {
   vertical-align: middle; }
 
 h1 {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
   text-align: center;
   font-size: 100px; }
+
+.dropper {
+  display: inline-block;
+  vertical-align: middle; }
+
+#etsy-search {
+  display: inline-block;
+  vertical-align: middle; }
 
 .stylin {
   max-width: 782px;
