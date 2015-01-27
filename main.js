@@ -2,6 +2,7 @@
   'use strict';
 
 var futurama= rawData.results;
+var $list = $('.futurama-list');
 
 $(document).ready(function(){
 
@@ -30,23 +31,41 @@ function renderTemplate(name, data) {
   return $template;
 }
 
+function renderListings(data) {
+  $list.empty();
+  data.forEach(function(item) {
+    var titleText = renderTemplate('itemRequest', {
+      title: item.title,
+      price: item.price,
+      currency: item.currency_code,
+      description: item.description,
+      images: item.Images[0].url_170x135,
+      shop: item.Shop.shop_name,
+      url: item.url,
+    });
+    $list.append(titleText);
+  });
+}
+
 var sort = function(array) {
   return _.sortBy(array, "price").reverse();
 };
 
- var userInput = function() {
-
- $('form').on('submit', function(event) {
-  console.log($(this).find('input').val());
-
+$('form').on('submit', function(event) {
+  event.preventDefault();
+  var itemRequest = ($(this).find('#search').val());
+  $.ajax({
+    url: "https://api.etsy.com/v2/listings/active.js?api_key=cdwxq4soa7q4zuavbtynj8wx&keywords=" + itemRequest + "&includes=Images,Shop",
+    type: "GET",
+    dataType: 'jsonp'
+  })
+  .done(function(data){
+    $list.empty();
+    renderListings(data.results);
+    console.log(data);
+  });
 });
-}
 
-$.ajax({
-  url: "https://api.etsy.com/v2/listings/active.js?api_key=cdwxq4soa7q4zuavbtynj8wx&keywords="+userInput+"&includes=Images,Shop",
-  dataType: 'jsonp'
-}).done(function(data){
-  console.log(data);
-});
+
 
 })();
